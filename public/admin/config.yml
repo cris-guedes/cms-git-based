@@ -1,0 +1,90 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+# Local Backend (permite editar localmente sem GitHub)
+local_backend: true
+
+# Logo do CMS
+logo_url: /favicon.ico
+
+# Backend Configuration
+backend:
+  name: github
+  repo: cris-guedes/cms-git-based # ALTERE ISSO para seu repositório GitHub seu-usuario/seu-repositorio
+  branch: main # ou master, dependendo do seu repositório
+
+# Workflow Editorial (permite rascunhos e revisão antes de publicar)
+publish_mode: editorial_workflow
+
+# Configuração de Slugs
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '-'
+
+# Media Storage
+media_folder: /content/media
+public_folder: /media
+
+# Locale
+locale: pt-BR
+
+# Collections
+collections:
+  # Páginas Estáticas
+  - name: pages
+    label: Páginas
+    label_singular: Página
+    folder: /content/pages
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    fields:
+      - label: Título
+        name: title
+        widget: string
+        required: true
+      
+      - label: Descrição
+        name: description
+        widget: text
+        required: false
+        hint: "Descrição para SEO (meta description)"
+      
+      - label: URL/Slug
+        name: slug
+        widget: string
+        required: true
+        hint: URL da página
+      
+      - label: Imagem Destacada
+        name: featured_image
+        widget: image
+        required: false
+        hint: "Imagem principal da página"
+      
+      - label: Conteúdo
+        name: body
+        widget: markdown
+        required: true
+      
+      - label: Data de Publicação
+        name: date
+        widget: datetime
+        required: true
+        default: ''
+        date_format: DD/MM/YYYY
+        time_format: HH:mm
+      
+      - label: Publicado
+        name: published
+        widget: boolean
+        default: true
+        required: false
+      
+      - label: Ordem
+        name: order
+        widget: number
+        required: false
+        hint: "Ordem de exibição no menu (menor número aparece primeiro)"
+        value_type: int
+        min: 0
