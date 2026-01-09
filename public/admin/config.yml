@@ -1,10 +1,8 @@
 # yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
 
-# Local Backend (permite editar localmente sem GitHub)
-local_backend: true
-
 # Logo do CMS
-logo_url: /favicon.ico
+logo:
+  src: /favicon.ico
 
 # Backend Configuration
 backend:
@@ -24,9 +22,6 @@ slug:
 # Media Storage
 media_folder: /content/media
 public_folder: /media
-
-# Locale
-locale: pt-BR
 
 # Collections
 collections:
@@ -69,6 +64,250 @@ collections:
             widget: object
             fields:
               - {label: Content, name: content, widget: markdown}
+              
+      - name: home2
+        label: Ateliê da Artesã
+        file: content/home2.md
+        fields:
+          - label: Header
+            name: header
+            widget: object
+            fields:
+              - {label: Brand Name, name: brand, widget: string}
+              - label: Navigation
+                name: nav
+                widget: list
+                fields:
+                  - {label: Label, name: label, widget: string}
+                  - {label: Link, name: link, widget: string}
+
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Subtitle, name: subtitle, widget: text}
+              - {label: Primary CTA Text, name: cta_primary_text, widget: string}
+              - {label: Primary CTA Link, name: cta_primary_link, widget: string}
+              - {label: Secondary CTA Text, name: cta_secondary_text, widget: string}
+              - {label: Secondary CTA Link, name: cta_secondary_link, widget: string}
+              - {label: Image, name: image, widget: image}
+
+          - label: Artesanato (Features)
+            name: features_section
+            widget: object
+            fields:
+              - {label: Section Title, name: title, widget: string}
+              - {label: Section Description, name: description, widget: text}
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - {label: Category, name: category, widget: string}
+                  - {label: Icon Name, name: icon, widget: string, hint: "Material Symbols name (ex: palette, cake)"}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Image, name: image, widget: image}
+                  - label: Benefits
+                    name: benefits
+                    widget: list
+                    summary: '{{fields.benefit}}'
+                    field: {label: Benefit, name: benefit, widget: string}
+
+          - label: Sobre
+            name: about
+            widget: object
+            fields:
+              - {label: Badge, name: badge, widget: string}
+              - {label: Title, name: title, widget: string}
+              - label: Bio Content
+                name: content
+                widget: list
+                summary: '{{fields.paragraph}}'
+                field: {label: Paragraph, name: paragraph, widget: text}
+              - {label: CTA Text, name: cta_text, widget: string}
+              - {label: CTA Link, name: cta_link, widget: string}
+              - {label: Image, name: image, widget: image}
+              - {label: Rating Value, name: rating_value, widget: string}
+              - {label: Rating Text, name: rating_text, widget: string}
+
+          - label: Depoimentos
+            name: testimonials_section
+            widget: object
+            fields:
+              - {label: Section Title, name: title, widget: string}
+              - {label: Section Description, name: description, widget: text}
+              - label: Testimonials
+                name: items
+                widget: list
+                fields:
+                  - {label: Name, name: name, widget: string}
+                  - {label: Relation/Subtitle, name: relation, widget: string}
+                  - {label: Quote, name: quote, widget: text}
+                  - {label: Avatar, name: avatar, widget: image}
+
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - {label: Description, name: description, widget: text}
+              - label: Navigation
+                name: nav
+                widget: list
+                fields:
+                  - {label: Label, name: label, widget: string}
+                  - {label: Link, name: link, widget: string}
+              - label: Contact Info
+                name: contact
+                widget: object
+                fields:
+                  - {label: Email, name: email, widget: string}
+                  - {label: Phone, name: phone, widget: string}
+                  - {label: Location, name: location, widget: string}
+
+          - {label: WhatsApp Link, name: whatsapp_link, widget: string}
+
+      - name: galeria
+        label: Galeria de Tesouros
+        file: content/galeria.md
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Subtitle, name: subtitle, widget: text}
+              - {label: Highlight Image, name: image, widget: image}
+          
+          - label: Categorias de Filtro
+            name: categories
+            widget: list
+            fields:
+              - {label: Label, name: label, widget: string}
+              - {label: ID, name: id, widget: string, hint: "all, croche, biscuit"}
+
+          - label: Vitrine de Itens
+            name: items
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Category ID, name: category, widget: string}
+              - {label: Category Label, name: category_label, widget: string}
+              - {label: Image, name: image, widget: image}
+
+      - name: sobre
+        label: Como Funciona (Sobre)
+        file: content/sobre.md
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {label: Badge, name: badge, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Subtitle, name: subtitle, widget: text}
+
+          - label: Passos (Steps)
+            name: steps_section
+            widget: object
+            fields:
+              - label: Steps
+                name: steps
+                widget: list
+                fields:
+                  - {label: Number, name: number, widget: number}
+                  - {label: Icon Name, name: icon, widget: string, hint: "Material Symbols name (ex: search, chat)"}
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+
+          - label: Informações (Prazos/Pagamento)
+            name: info_section
+            widget: object
+            fields:
+              - label: Produção
+                name: production
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Items
+                    name: items
+                    widget: list
+                    fields:
+                      - {label: Item Title, name: title, widget: string}
+                      - {label: Item Text, name: text, widget: string}
+              - label: Pagamento
+                name: payment
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Methods
+                    name: methods
+                    widget: list
+                    summary: '{{fields.method}}'
+                    field: {label: Method, name: method, widget: string}
+
+          - label: Cuidados (Care)
+            name: care_section
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Subtitle, name: subtitle, widget: text}
+              - label: Categories
+                name: categories
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Icon Name, name: icon, widget: string}
+                  - label: Tips
+                    name: tips
+                    widget: list
+                    summary: '{{fields.tip}}'
+                    field: {label: Tip, name: tip, widget: string}
+
+          - label: CTA Final
+            name: cta_section
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Text, name: text, widget: text}
+              - {label: Button Text, name: button_text, widget: string}
+
+      - name: contato
+        label: Fale Comigo (Contato)
+        file: content/contato.md
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Subtitle, name: subtitle, widget: text}
+
+          - label: Processo (Mágica)
+            name: process_section
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: text}
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Icon Name, name: icon, widget: string}
+                  - {label: Description, name: description, widget: text}
+
+          - label: Seção de Contato
+            name: contact_section
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: WhatsApp CTA, name: whatsapp_cta, widget: string}
+              - {label: WhatsApp Label, name: whatsapp_label, widget: string}
+              - {label: Form Title, name: form_title, widget: string}
+              - {label: Form Options, name: form_options, widget: list, field: {label: Option, name: option, widget: string}}
               
   # Páginas Estáticas
   - name: pages

@@ -35,6 +35,19 @@
 
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
+
+  /* Ateliê da Artesã - Brand Colors */
+  --color-primary-brand: #f0754c;
+  --color-primary-brand-dark: #d65a31;
+  --color-background-brand-light: #f8f6f6;
+  --color-background-brand-dark: #221510;
+  --color-card-brand-light: #ffffff;
+  --color-card-brand-dark: #2c1f1a;
+  --color-text-brand-main: #181311;
+  --color-text-brand-muted: #896b61;
+
+  /* Brand Typography */
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
