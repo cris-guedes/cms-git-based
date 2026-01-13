@@ -7,10 +7,9 @@ logo:
 # Backend Configuration
 backend:
   name: github
-  branch: main # ou master, dependendo do seu repositório
-  repo: cris-guedes/cms-git-based # ALTERE ISSO para seu repositório GitHub seu-usuario/seu-repositorio
-  site_id: 678475f8-ad98-4c16-87bf-bc4be742403b
+  repo: cris-guedes/cms-git-based
   base_url: https://cms-git-based.cristianguedes136.workers.dev
+  branch: main # ou master, dependendo do seu repositório
 
 # Workflow Editorial (permite rascunhos e revisão antes de publicar)
 publish_mode: editorial_workflow
