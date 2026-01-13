@@ -12,7 +12,7 @@ backend:
   site_id: 678475f8-ad98-4c16-87bf-bc4be742403b
   app_id: 2650814
   client_id: Iv23liddMElJR0b5ZZbx
-  auth_type: implicit
+  
 
 # Workflow Editorial (permite rascunhos e revisão antes de publicar)
 publish_mode: editorial_workflow
