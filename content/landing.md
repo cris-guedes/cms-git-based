@@ -1,6 +1,6 @@
 ---
 header:
-  brand: Static CMS
+  brand: Teste
   cta_text: Acessar Admin
   cta_link: /admin
 hero:
@@ -20,5 +20,6 @@ features:
     description: Adapte cada seção para atender às suas necessidades.
     icon: Settings
 footer:
-  content: "Built by [Antigravity](#). Source code on [GitHub](#)."
+  content: Built by [Antigravity](#). Source code on [GitHub](#).
 ---
+
