@@ -1,7 +1,11 @@
 {
     "name": "cms-simple",
+    "main": "./dist/server/index.js",
     "compatibility_date": "2026-01-09",
     "assets": {
         "directory": "./dist/client"
+    },
+    "observability": {
+        "enabled": true
     }
 }
