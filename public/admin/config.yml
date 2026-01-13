@@ -8,6 +8,7 @@ logo:
 backend:
   name: github
   branch: main # ou master, dependendo do seu repositório
+  repo: cris-guedes/cms-git-based # ALTERE ISSO para seu repositório GitHub seu-usuario/seu-repositorio
   site_id: 678475f8-ad98-4c16-87bf-bc4be742403b
   base_url: https://cms-git-based.cristianguedes136.workers.dev
   
