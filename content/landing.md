@@ -1,6 +1,6 @@
 ---
 header:
-  brand: Teste
+  brand: Testess
   cta_text: Acessar Adminsss
   cta_link: /admin
 hero:
